@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/6860a5f663.js" crossorigin="anonymous"></script>
+  <script src="index.js"></script>
+  <title>PingPong Score Board</title>
+  <script>
+    function toggleFullScreen() {
+      if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+        if (document.documentElement.requestFullscreen) {
+          document.documentElement.requestFullscreen();
+        } else if (document.documentElement.msRequestFullscreen) {
+          document.documentElement.msRequestFullscreen();
+        } else if (document.documentElement.mozRequestFullScreen) {
+          document.documentElement.mozRequestFullScreen();
+        } else if (document.documentElement.webkitRequestFullscreen) {
+          document.documentElement.webkitRequestFullscreen(Element.ALLOW_KEYBOARD_INPUT);
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <div class="form-wraper">
+<div class="form-content-wraper">
+  <div class="toss-reset-container">
+    <div class="logo-container">
+    <div id="logo">Score Board</div>
+  </div>
+  <div class="btn-container">
+    <button id="toss-btn"><i class="material-icons">thumb_up_off_alt</i>Toss</button>
+    <button id="reset-btn"> <i class="material-icons">restart_alt</i></button>
+    <button id='togglebtn' onclick="toggleFullScreen()"><i class="material-icons">fullscreen</i></button>
+  </div>
+  </div>
+    <!-- First Player Section Starts -->
+    <div class="player-container" id="player-one-container">
+      <div class="player-select-score-container">
+        <select id="player-one-select-field">
+          <option value="" disabled selected>Select Player</option>
+          <option value="player1">Abhijit Rabha</option>
+          <option value="player2">Nayan Mazumder</option>
+          <option value="player3">Leeladhar Singha</option>
+          <option value="player4">Dikshit Dhrupad</option>
+        </select>
+        <input type="text" class="player-one-score increase-point inc-one-btn" readonly>
+        <div class="service-indicator" id="player-one-service-indicator"></div>
+      </div>
+      <div class="inc-dsc-btn-container">
+        <button class="decrease-player-one-score">Decrease</button>
+        <button id = "increase-player-one-score" class="inc-one-btn increase-point">Increase</button>
+      </div>
+    </div>
+
+    <!-- Second Player Section Starts -->
+    <div class="player-container" id="player-two-container">
+      <div class="player-select-score-container">
+        <select id="player-two-select-field">
+          <option value="" disabled selected>Select Player</option>
+          <option value="player1">Abhijit Rabha</option>
+          <option value="player2">Nayan Mazumder</option>
+          <option value="player3">Leeladhar Singha</option>
+          <option value="player4">Dikshit Dhrupad</option>
+        </select>
+        <input type="text" class="player-two-score increase-point inc-two-btn" readonly>
+        <div class="service-indicator" id="player-two-service-indicator"></div>
+      </div>
+      <div class="inc-dsc-btn-container">
+        <button class="decrease-player-two-score">Decrease</button>
+        <button id = "increase-player-two-score" class="inc-two-btn increase-point">Increase</button>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>
