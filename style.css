@@ -422,7 +422,7 @@ input {
       
     }
 
-    .form-content-wraper:not(:fullscreen) {
+    .form-content-wraper{
       display: none;
     }
 
