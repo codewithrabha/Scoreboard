@@ -17,6 +17,10 @@ Body{
   overflow: hidden;
 }
 
+.enable-fs-container{
+  display: none;
+}
+
 .form-wraper {
   display: flex;
   justify-content: center;
@@ -361,15 +365,47 @@ input {
   }
   
   body {
+      width: 100svw;
+      height: 100svh;
       padding: 0;
       margin: 0;
       overflow: hidden;
     }
 
+    .enable-fs-container:not(:fullscreen){
+      display: contents;
+    }
+
+    :fullscreen .enable-fs-container{
+      display: none;
+    }
+
+#fs-btn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  width: fit-content;
+  height: 35px;
+  color: white;
+  background-color: #4E77FF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+}
+
+#fs-btn:focus{
+  background-color: #1BAF79;
+  outline: none;
+}
+
     :fullscreen .form-wraper {
       display: flex;
-      width: 100svw;
-      height: 100svh;
+      width: 100%;
+      height: 100%;
       margin: 0;
       overflow: hidden;
       padding: 10px !important;
@@ -377,37 +413,49 @@ input {
     }
     .form-wraper:not(:fullscreen) {
       display: flex;
-      width: 100svw;
-      height: 100svh;
+      flex-wrap: wrap;
+      width: 100%;
+      height: 100%;
       margin: 0;
       overflow: hidden;
-      padding: 50px 10px 10px 10px;
+      padding: 0;
       
     }
 
-    .form-content-wraper {
+    .form-content-wraper:not(:fullscreen) {
+      display: none;
+      position: relative;
+      width: fit-content;
+      height: 100%;
+      padding: 45px 0 5px 0;
+      background-color: rgb(78, 119, 255);
+      overflow: hidden;
+      border-radius: 3px;
+    }
+
+    :fullscreen .form-content-wraper {
       display: flex;
       position: relative;
       width: fit-content;
-      height: 95%;
+      height: 100%;
       padding: 45px 0 5px 0;
       background-color: rgb(78, 119, 255);
       overflow: hidden;
       border-radius: 3px;
     }
   
-    .player-container {
+    :fullscreen .player-container {
       padding: 7px 15px;
       display: flex;
       gap: 15px;
       flex-direction: column;
       width: 360px;
       max-width:  480px;
-      height: 99%;
+      height: 100%;
       background-color: #f6f6f6;
     }
     
-    .player-select-score-container {
+    :fullscreen .player-select-score-container {
       padding: 0;
       margin: 0;
       display: flex;
@@ -416,7 +464,7 @@ input {
       height: 90%;
     }
 
-    .service-indicator {
+    :fullscreen .service-indicator {
       position: absolute;
       top: 30%;
     }

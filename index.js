@@ -214,7 +214,6 @@ function getRandomElement(arr) {
   increaseButtons.forEach(button => {
     button.addEventListener("click", function () {
       buttonClickCount++;
-      console.log(buttonClickCount);
 
       if (buttonClickCount >= 2) {
         const serviceIndicators = [playerOneIndicator, playerTwoIndicator];
