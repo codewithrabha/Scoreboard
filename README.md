@@ -1,3 +1,4 @@
+# Score Board (Table Tennis)
 This is a score tracking application for Table Tennis Sport that allows two players to keep track of their scores in a game. It provides functionality for increasing and decreasing scores, resetting scores, handling game over conditions, displaying a popup with game results, and implementing a toss and switch module for determining the serving player. Additionally, it includes a player selection module for selecting players.
 
 The code is structured using event listeners and functions to handle different actions and interactions with the HTML elements on the page. It utilizes DOM manipulation to update the score fields, toggle classes for indicators, and create dynamic popups for displaying game results.
@@ -5,25 +6,26 @@ The code is structured using event listeners and functions to handle different a
 Initialization and Event Listeners
 The code starts by adding an event listener to the DOMContentLoaded event. This ensures that the code inside the event listener executes only when the HTML document has finished loading.
 
-Score Tracking
+## Score Tracking
 The code defines variables and selects the necessary HTML elements related to score tracking for both players. It selects score fields, increase and decrease buttons, and select fields for player one and player two.
 
 Score Manipulation Functions
 The code defines functions for updating scores, decreasing scores, and resetting scores. These functions handle the logic for incrementing and decrementing the scores based on button clicks.
 
-Game Over Popup
+## Game Over Popup
 The code includes a function for displaying a popup with game results when a game is over. The function takes parameters such as the message to display, player scores, and a callback function to execute when the popup is closed.
 
-Toss and Switch Module
+## Toss and Switch Module
 The code includes a toss and switch module that handles selecting a serving player and switching the serving player after two points. It defines a function to randomly select an element from an array, in this case, the player indicators.
 
-Player Selection Module
+## Player Selection Module
 The code includes a player selection module that handles the selection of players. It selects the player select fields for player one and player two and adds an event listener to the player one select field.
 
-Project Overview
+## Project Overview
 This project provides the functionality to track scores, handle game over conditions, display popups with game results, implement a toss and switch module for serving players, and enable player selection. You can use this code as a starting point for building a score tracking application or adapt it to fit your specific requirements.
 
 
-Change Log
+# Change Log
 
-V1.0. Initial version
+## V1.0
+* Initial release.
