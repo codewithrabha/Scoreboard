@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const playerTwoDecreaseButton = document.querySelector('.decrease-player-two-score');
   const playerTwoSelectField = document.getElementById('player-two-select-field');
 
+  playerOneScoreField.readOnly = true; // Lock player one score field
+  playerTwoScoreField.readOnly = true; // Lock player two score field
+
   const resetButton = document.getElementById('reset-btn');
 
   const resetBtnClickCount = () =>{
@@ -16,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reset function to clear the "active" class from the div elements
-  function resetIndicators() {
+  const resetIndicators = () => {
     const playerOneIndicator = document.getElementById("player-one-service-indicator");
     const playerTwoIndicator = document.getElementById("player-two-service-indicator");
     const indicators = [playerOneIndicator, playerTwoIndicator];
@@ -27,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reset function to reset scores of both players.
-  function resetScores() {
+  const resetScores = () => {
     playerOneScoreField.value = 0;
     playerTwoScoreField.value = 0;
   }
@@ -37,9 +40,6 @@ resetButton.addEventListener('click', () => {
     resetIndicators();
     resetBtnClickCount();
   });
-
-  playerOneScoreField.readOnly = true; // Lock player one score field
-  playerTwoScoreField.readOnly = true; // Lock player two score field
 
   playerOneIncreaseButton.forEach(button => {
     button.addEventListener('click', () => updateScore(playerOneScoreField, playerTwoScoreField));
@@ -70,57 +70,59 @@ resetButton.addEventListener('click', () => {
   playerOneScoreField.value = 0;
   playerTwoScoreField.value = 0;
 
-  // Score update logic Starts
-  function updateScore(currentPlayerScoreField, opponentScoreField) {
-    // Code to update the score based on the current player's score field and opponent's score field
+  // Score update function Start
+  const updateScore = (currentPlayerScoreField, opponentScoreField) => {
     let currentValue = parseFloat(currentPlayerScoreField.value) || 0;
     let newValue = currentValue + 1;
-
-    if (newValue >= 11) {
-      // Code to handle game over conditions
-      if (currentValue === parseFloat(opponentScoreField.value) && currentValue >= 10) {
-        if (newValue - opponentScoreField.value >= 2) {
-          let winner, loser;
-
-          if (currentPlayerScoreField === playerOneScoreField) {
-            winner = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
-            loser = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
-          } else {
-            winner = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
-            loser = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
-          }
-
-          let playerOneScore = playerOneScoreField.value;
-          let playerTwoScore = playerTwoScoreField.value;
-          currentPlayerScoreField.value = newValue;
-          showPopup(`Game Over! ${winner} wins!`, playerOneScore, playerTwoScore, resetScores);
-          return;
-        }
-      } else if (newValue - opponentScoreField.value >= 2) {
-        let winner, loser;
-
-        if (currentPlayerScoreField === playerOneScoreField) {
-          winner = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
-          loser = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
-        } else {
-          winner = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
-          loser = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
-        }
-
-        let playerOneScore = playerOneScoreField.value;
-        let playerTwoScore = playerTwoScoreField.value;
-        currentPlayerScoreField.value = newValue;
-        showPopup(`Game Over! ${winner} wins!`, playerOneScore, playerTwoScore, resetScores);
-        return;
+  
+    if (
+      newValue >= 11 &&
+      currentValue === parseFloat(opponentScoreField.value) &&
+      currentValue >= 10 &&
+      newValue - opponentScoreField.value >= 2
+    ) {
+      let winner, loser;
+  
+      if (currentPlayerScoreField === playerOneScoreField) {
+        winner = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
+        loser = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
+      } else {
+        winner = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
+        loser = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
       }
+  
+      let playerOneScore = playerOneScoreField.value;
+      let playerTwoScore = playerTwoScoreField.value;
+      currentPlayerScoreField.value = newValue;
+      showPopup(`Game Over! ${winner} wins!`, playerOneScore, playerTwoScore, resetScores);
+      return;
     }
+  
+    if (newValue >= 11 && newValue - opponentScoreField.value >= 2) {
+      let winner, loser;
+  
+      if (currentPlayerScoreField === playerOneScoreField) {
+        winner = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
+        loser = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
+      } else {
+        winner = playerTwoSelectField.options[playerTwoSelectField.selectedIndex].text;
+        loser = playerOneSelectField.options[playerOneSelectField.selectedIndex].text;
+      }
+  
+      let playerOneScore = playerOneScoreField.value;
+      let playerTwoScore = playerTwoScoreField.value;
+      currentPlayerScoreField.value = newValue;
+      showPopup(`Game Over! ${winner} wins!`, playerOneScore, playerTwoScore, resetScores);
+      return;
+    }
+  
     currentPlayerScoreField.value = newValue;
   }
-  // Score update logic ends...
+  // Score update function end...
 
 
-  // Game Over Popup Logic Starts
-  function showPopup(message, playerOneScore, playerTwoScore, onClose) {
+  // Game Over Popup function Start
+  const showPopup = (message, playerOneScore, playerTwoScore, onClose) => {
     const popupOverlay = document.createElement('div');
     popupOverlay.classList.add('popup-overlay');
 
@@ -173,11 +175,11 @@ resetButton.addEventListener('click', () => {
     popupOverlay.appendChild(popup);
     document.body.appendChild(popupOverlay);
   }
-  // Game Over Popup Logic Ends...
+  // Game Over Popup function End...
 
   //Toss & Switch Module Starts
 // Function to randomly select an element from an array
-function getRandomElement(arr) {
+const getRandomElement = (arr) => {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
@@ -226,7 +228,6 @@ function getRandomElement(arr) {
     });
   });
 //Toss & Switch Module Ends...
-
 });
 // Core Function Ends...
 
