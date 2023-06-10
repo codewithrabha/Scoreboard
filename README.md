@@ -3,10 +3,12 @@ This is a score tracking application for Table Tennis Sport that allows two play
 
 The code is structured using event listeners and functions to handle different actions and interactions with the HTML elements on the page. It utilizes DOM manipulation to update the score fields, toggle classes for indicators, and create dynamic popups for displaying game results.
 
-ScoreBoard Demo : https://codewithrabha.github.io/scoreboard/
-
 Initialization and Event Listeners
 The code starts by adding an event listener to the DOMContentLoaded event. This ensures that the code inside the event listener executes only when the HTML document has finished loading.
+
+ScoreBoard Demo : https://codewithrabha.github.io/scoreboard/
+
+------------------------------------------------------------------
 
 ## Score Tracking
 The code defines variables and selects the necessary HTML elements related to score tracking for both players. It selects score fields, increase and decrease buttons, and select fields for player one and player two.
