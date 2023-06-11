@@ -645,7 +645,7 @@ select {
 
   :fullscreen .service-indicator {
     position: absolute;
-    top: 30%;
+    top: 28%;
   }
   
   .modal-content {
