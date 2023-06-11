@@ -14,7 +14,7 @@ ScoreBoard Demo : https://codewithrabha.github.io/scoreboard/
 The code defines variables and selects the necessary HTML elements related to score tracking for both players. It selects score fields, increase and decrease buttons, and select fields for player one and player two.
 
 ## Add/Remove Players
-This code enables the user to add and manage player options in a web application. It utilizes a modal to facilitate the addition of players, with an input field and an "Add" button. The player names are displayed in a list format, accompanied by a remove button for each player. The code also updates select fields with the added player options. The user can save the selected players and close the modal when finished. Overall, this code provides a user-friendly interface for managing player options in the application.
+This code enables the user to add and manage player options. It utilizes a modal to facilitate the addition of players, with an input field and an "Add" button. The player names are displayed in a list format, accompanied by a remove button for each player. The code also updates select fields with the added player options. The user can save the selected players and close the modal when finished. Overall, this code provides a user-friendly interface for managing player options in the application.
 
 ## Score Manipulation Functions
 The code defines functions for updating scores, decreasing scores, and resetting scores. These functions handle the logic for incrementing and decrementing the scores based on button clicks.
