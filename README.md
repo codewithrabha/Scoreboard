@@ -22,6 +22,9 @@ The code defines functions for updating scores, decreasing scores, and resetting
 ## Game Over Popup
 The code includes a function for displaying a popup with game results when a game is over. The function takes parameters such as the message to display, player scores, and a callback function to execute when the popup is closed.
 
+## Save/Download Game Result
+The code sets up a "Save Record" button that, when clicked, captures a screenshot of the webpage or a specified element, creates a downloadable link with the captured image, and initiates the download of the image file with a customized filename.
+
 ## Toss and Switch Module
 The code includes a toss and switch module that handles selecting a serving player and switching the serving player after two points. It defines a function to randomly select an element from an array, in this case, the player indicators.
 
@@ -37,6 +40,7 @@ This project provides the functionality to track scores, handle game over condit
 ## v1.0.1
 * ADD - Option to add or remove players.
 * ADD - Sound affects for toss and service change.
+* UPD - Save record button on result modal now takes screenshot of result and downloads it.
 
 ## v1.0
 * Initial release.
