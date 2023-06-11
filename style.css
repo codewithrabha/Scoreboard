@@ -647,4 +647,10 @@ select {
     position: absolute;
     top: 30%;
   }
+  
+  .modal-content {
+    width: 70%;
+    height: 70%;
+  }
+  
 }
