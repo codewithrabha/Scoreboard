@@ -39,7 +39,7 @@ This project provides the functionality to track scores, handle game over condit
 
 ## v1.0.1
 * ADD - Option to add or remove players.
-* ADD - Sound affects for toss and service change.
+* ADD - Sound effects for toss and service change.
 * UPD - Save match result (Screenshot Download).
 
 ## v1.0
