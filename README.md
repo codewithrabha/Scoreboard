@@ -1,4 +1,4 @@
-# Score Board (Table Tennis)
+# Table Tennis Score Board
 This is a score tracking application for Table Tennis Sport that allows two players to keep track of their scores in a game. It provides functionality for increasing and decreasing scores, resetting scores, handling game over conditions, displaying a popup with game results, and implementing a toss and switch module for determining the serving player. Additionally, it includes a player selection module for selecting players.
 
 The code is structured using event listeners and functions to handle different actions and interactions with the HTML elements on the page. It utilizes DOM manipulation to update the score fields, toggle classes for indicators, and create dynamic popups for displaying game results.
