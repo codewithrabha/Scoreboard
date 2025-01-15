@@ -6,7 +6,7 @@ The code is structured using event listeners and functions to handle different a
 Initialization and Event Listeners
 The code starts by adding an event listener to the DOMContentLoaded event. This ensures that the code inside the event listener executes only when the HTML document has finished loading.
 
-ScoreBoard Demo : https://codewithrabha.github.io/Scoreboard/
+ScoreBoard Demo : https://codewithrabha.github.io/scoreboard/
 
 ------------------------------------------------------------------
 
